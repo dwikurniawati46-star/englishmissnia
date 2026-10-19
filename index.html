@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grammar Matsaro | English Grammar Learning Center</title>
+<style>
+:root{--navy:#17364f;--teal:#217d76;--gold:#e6ad53;--ink:#1f2937;--muted:#687789;--paper:#f4f7fb;--line:#dfe7ef;--white:#fff;--red:#b74444;--green:#237a55}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 15px;font-weight:700;background:var(--navy);color:white}button:disabled{opacity:.45;cursor:not-allowed}.secondary{background:#e8eef4;color:var(--navy)}.teal{background:var(--teal)}.gold{background:var(--gold);color:#30240f}.danger{background:#f9e7e7;color:#9e3030}.wrap{max-width:1100px;margin:auto;padding:20px}.top{background:linear-gradient(125deg,var(--navy),#245a6a);color:white;padding:24px 0 32px}.brand{display:flex;align-items:center;gap:13px}.logo{width:52px;height:52px;border-radius:16px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-weight:900;font-size:20px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:800;opacity:.8}.top h1{font-size:clamp(25px,4vw,38px);line-height:1.1;margin:4px 0}.top p{margin:8px 0 0;color:#e4edf4}.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 24px #17364f0a;margin-top:18px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{background:#f4f8fa;border-radius:14px;padding:15px}.stat strong{font-size:25px;color:var(--navy);display:block}.muted{color:var(--muted)}.small{font-size:13px}.hidden{display:none!important}label{font-weight:700;display:block;margin:12px 0 6px}input,select{width:100%;padding:12px;border:1px solid #ccd7e1;border-radius:11px;background:white;color:var(--ink)}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.pill{display:inline-block;border-radius:99px;background:#e8f4f2;color:#17645e;font-size:12px;padding:5px 10px;font-weight:800}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.tabs button{background:#e7edf3;color:var(--navy)}.tabs button.active{background:var(--navy);color:white}.student-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.student-chip{padding:10px;border:1px solid var(--line);border-radius:10px;background:#fafcfe}.question{padding:18px;border:1px solid var(--line);border-radius:15px;margin:14px 0;background:#fff}.qnum{font-size:12px;font-weight:800;color:var(--teal);text-transform:uppercase;letter-spacing:.08em}.answers{display:grid;gap:8px;margin-top:12px}.answer{border:1px solid #d5dfe8;border-radius:11px;padding:12px;display:flex;gap:10px;align-items:flex-start;cursor:pointer}.answer input{width:auto;margin-top:5px}.answer:has(input:checked){border-color:var(--teal);background:#eff9f7}.feedback{border-radius:10px;padding:12px;margin-top:12px}.good{background:#e8f6ee;color:#17623d}.bad{background:#fff1e9;color:#8c4820}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:11px;border-bottom:1px solid var(--line);white-space:nowrap}th{background:#f3f7fa;color:#425367}.notice{border-left:4px solid var(--gold);background:#fff8e9;padding:13px;border-radius:8px}.footer{text-align:center;color:var(--muted);font-size:12px;padding:25px}.score{font-size:48px;font-weight:900;color:var(--teal)}.progress{height:8px;background:#e6edf2;border-radius:99px;overflow:hidden}.progress div{height:100%;background:var(--teal);width:0%}@media(max-width:700px){.grid,.grid.two{grid-template-columns:1fr}.student-list{grid-template-columns:repeat(2,minmax(0,1fr))}.wrap{padding:14px}.panel{padding:16px}.top{padding-top:20px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+ <div class="brand"><div class="logo">GM</div><div><div class="eyebrow">English Grammar Learning Center</div><h1>Grammar Matsaro</h1><div>Learn clearly. Practice confidently.</div></div></div>
+ <p>Ruang latihan grammar untuk siswa MTs kelas VII, VIII, dan IX.</p>
+</div></header>
+<main class="wrap">
+<section id="loginView" class="panel">
+ <div class="row"><div><h2 style="margin:0">Selamat datang!</h2><p class="muted">Masuk sebagai siswa atau guru untuk memulai.</p></div><span class="pill">24 siswa terdaftar</span></div>
+ <div class="grid two">
+  <div class="stat"><h3>Masuk Siswa</h3><p class="small muted">Pilih kelas dan nama. Pada prototipe ini tidak ada kata sandi sungguhan.</p>
+   <label for="classSelect">Kelas</label><select id="classSelect"><option value="7">Kelas VII</option><option value="8">Kelas VIII</option><option value="9">Kelas IX</option></select>
+   <label for="studentSelect">Nama siswa</label><select id="studentSelect"></select>
+   <button class="teal" style="width:100%;margin-top:14px" onclick="studentLogin()">Masuk sebagai siswa</button>
+  </div>
+  <div class="stat"><h3>Masuk Guru / Admin</h3><p class="small muted">Dashboard guru untuk melihat ringkasan hasil latihan yang tersimpan di browser ini.</p>
+   <label for="teacherPin">Kode admin demo</label><input id="teacherPin" type="password" placeholder="Masukkan kode demo">
+   <button style="width:100%;margin-top:14px" onclick="teacherLogin()">Masuk sebagai Dwi Isnaini</button>
+   <p class="small muted">Kode demo: <strong>MATSARO26</strong></p>
+  </div>
+ </div>
+ <div class="notice small" style="margin-top:18px"><strong>Penting:</strong> Ini prototipe HTML yang berjalan di browser. Data disimpan lokal pada perangkat/browser ini, bukan di server. Pemilihan nama saja bukan autentikasi aman; untuk penggunaan kelas sungguhan, perlu login individual dan database dengan aturan akses.</div>
+</section>
+<section id="studentView" class="hidden">
+ <div class="row" style="margin-top:20px"><div><div class="eyebrow" style="color:var(--teal)">Student workspace</div><h2 id="studentWelcome" style="margin:4px 0">Halo!</h2><div class="muted" id="studentSub"></div></div><button class="secondary" onclick="logout()">Keluar</button></div>
+ <div class="grid" style="margin-top:16px"><div class="stat"><span class="muted small">Latihan selesai</span><strong id="myAttempts">0</strong></div><div class="stat"><span class="muted small">Nilai terbaik</span><strong id="myBest">—</strong></div><div class="stat"><span class="muted small">Level</span><strong id="myLevel" style="font-size:20px">Grammar Explorer</strong></div></div>
+ <div class="panel"><div class="row"><div><h2 style="margin:0">Pilih latihan</h2><p class="muted">Setiap latihan memiliki pilihan ganda, isian, dan susun kata.</p></div><span class="pill" id="classPill"></span></div><div class="grid" id="lessonCards"></div></div>
+ <div id="quizPanel" class="panel hidden"></div><div id="resultPanel" class="panel hidden"></div>
+ <div class="notice small">Privasi demo: tampilan siswa hanya menampilkan hasil akun/nama yang sedang dipilih. Namun karena ini HTML lokal tanpa autentikasi server, siswa yang memiliki akses ke perangkat atau file browser dapat memeriksa data. Jangan gunakan untuk nilai rahasia resmi sebelum dipasang dengan sistem login aman.</div>
+</section>
+<section id="adminView" class="hidden">
+ <div class="row" style="margin-top:20px"><div><div class="eyebrow" style="color:var(--teal)">Teacher / admin dashboard</div><h2 style="margin:4px 0">Dwi Isnaini</h2><div class="muted">Kelola latihan dan pantau hasil siswa.</div></div><button class="secondary" onclick="logout()">Keluar</button></div>
+ <div class="grid" style="margin-top:16px"><div class="stat"><span class="muted small">Siswa terdaftar</span><strong>24</strong></div><div class="stat"><span class="muted small">Pengumpulan latihan</span><strong id="totalAttempts">0</strong></div><div class="stat"><span class="muted small">Rata-rata nilai</span><strong id="averageScore">—</strong></div></div>
+ <div class="panel"><div class="row"><h2 style="margin:0">Hasil latihan</h2><div class="row"><select id="filterClass" onchange="renderAdmin()" style="width:auto"><option value="all">Semua kelas</option><option value="7">Kelas VII</option><option value="8">Kelas VIII</option><option value="9">Kelas IX</option></select><button class="secondary" onclick="exportCSV()">Ekspor CSV</button></div></div><p class="small muted">Hasil di bawah hanya berasal dari latihan yang dikerjakan pada browser ini.</p><div class="table-wrap"><table><thead><tr><th>Tanggal</th><th>Nama</th><th>Kelas</th><th>Latihan</th><th>Skor</th><th>Detail</th></tr></thead><tbody id="resultsBody"></tbody></table></div><div id="adminEmpty" class="muted small" style="padding:16px">Belum ada hasil latihan.</div></div>
+ <div class="panel"><h3>Daftar siswa</h3><div id="roster"></div></div>
+ <div class="panel"><h3>Kelola data demo</h3><p class="small muted">Tombol ini menghapus semua hasil latihan dari browser ini.</p><button class="danger" onclick="clearResults()">Hapus semua hasil demo</button></div>
+</section>
+</main>
+<footer class="footer">Grammar Matsaro • Prototipe pembelajaran Bahasa Inggris • Dwi Isnaini</footer>
+<script>
+const students={
+ 7:["Rafa","Kevin","Sibi","Firza"],
+ 8:["Neza","Zulfi","Haikal","Sakha","Olivia","Balqis","Shovi","Putri","Rokhman","Rokhim","Amlan","Yoga"],
+ 9:["Almer","Angga","Reza","Pandu","Saskia","Gista","Aliya","Asfa"]
+};
+const lessons=[
+ {id:"present",title:"Simple Present Tense",desc:"Rutinitas, fakta, dan kebiasaan.",classes:[7,8,9],questions:[
+  {type:"mc",q:"My brother ___ football every Sunday.",opts:["play","plays","playing","played"],a:"plays",exp:"Untuk he/she/it atau subjek tunggal, kata kerja biasanya ditambah -s/-es."},
+  {type:"fill",q:"They ___ (study) English every afternoon.",a:["study"],exp:"Subjek they memakai bentuk dasar kata kerja: study."},
+  {type:"mc",q:"Which sentence is grammatically correct?",opts:["She don't like tea.","She doesn't likes tea.","She doesn't like tea.","She not like tea."],a:"She doesn't like tea.",exp:"Setelah doesn't, gunakan kata kerja bentuk dasar."},
+  {type:"fill",q:"Water ___ (boil) at 100°C under standard conditions.",a:["boils"],exp:"Fakta umum menggunakan simple present; water dianggap subjek tunggal."},
+  {type:"order",q:"Susun kata menjadi kalimat yang benar.",words:["usually","I","breakfast","eat","at seven"],a:"I usually eat breakfast at seven",exp:"Pola umum: Subject + adverb of frequency + verb + object + time."}
+ ]},
+ {id:"past",title:"Simple Past Tense",desc:"Kejadian yang sudah selesai di masa lalu.",classes:[7,8,9],questions:[
+  {type:"mc",q:"We ___ a museum last Saturday.",opts:["visit","visits","visited","visiting"],a:"visited",exp:"Last Saturday menunjukkan waktu lampau; visit menjadi visited."},
+  {type:"fill",q:"Rina ___ (go) to school yesterday.",a:["went"],exp:"Bentuk lampau go adalah went."},
+  {type:"mc",q:"Choose the correct negative sentence.",opts:["He didn't came.","He doesn't came.","He didn't come.","He not came."],a:"He didn't come.",exp:"Setelah didn't, gunakan verb 1: come."},
+  {type:"fill",q:"They ___ (be) happy yesterday.",a:["were"],exp:"They dipasangkan dengan were dalam bentuk lampau."},
+  {type:"order",q:"Susun kata menjadi kalimat yang benar.",words:["played","the students","yesterday","badminton"],a:"The students played badminton yesterday",exp:"Pola: Subject + verb 2 + object + time."}
+ ]},
+ {id:"future",title:"Future: will & be going to",desc:"Rencana dan prediksi masa depan.",classes:[7,8,9],questions:[
+  {type:"mc",q:"I think it ___ rain tomorrow.",opts:["will","is","did","was"],a:"will",exp:"Will dapat digunakan untuk prediksi."},
+  {type:"fill",q:"We are going to ___ (visit) our grandmother.",a:["visit"],exp:"Setelah going to, gunakan verb bentuk dasar."},
+  {type:"mc",q:"Look at those dark clouds! It ___ rain.",opts:["is going to","did","has","was"],a:"is going to",exp:"Be going to sering digunakan untuk prediksi berdasarkan bukti yang terlihat."},
+  {type:"fill",q:"She ___ help you. (will / wills)",a:["will"],exp:"Modal will tidak berubah mengikuti subjek."},
+  {type:"order",q:"Susun kata menjadi kalimat yang benar.",words:["will","next week","our class","have","a test"],a:"Our class will have a test next week",exp:"Pola: Subject + will + verb dasar + keterangan waktu."}
+ ]},
+ {id:"structure",title:"Sentence Structure",desc:"Subject, verb, object, dan adjective.",classes:[7,8,9],questions:[
+  {type:"mc",q:"Which one is a complete sentence?",opts:["Because I was tired.","The cat sleeps on the sofa.","When the bell rang.","Running in the park."],a:"The cat sleeps on the sofa.",exp:"Kalimat lengkap umumnya memiliki subjek dan predikat yang membentuk gagasan utuh."},
+  {type:"fill",q:"The students ___ very friendly. (is / am / are)",a:["are"],exp:"Students berbentuk jamak, sehingga menggunakan are."},
+  {type:"mc",q:"In 'Mira reads a book', what is the object?",opts:["Mira","reads","a book","none"],a:"a book",exp:"A book menerima tindakan dari kata kerja reads."},
+  {type:"fill",q:"My classroom is ___ (clean / cleanly).",a:["clean"],exp:"Setelah be, adjective clean menjelaskan classroom."},
+  {type:"order",q:"Susun kata menjadi kalimat yang benar.",words:["is","my best friend","kind","and helpful"],a:"My best friend is kind and helpful",exp:"Pola: Subject + be + adjective phrase."}
+ ]},
+ {id:"modals",title:"Must, Should & Have to",desc:"Kewajiban, aturan, dan saran.",classes:[7,8,9],questions:[
+  {type:"mc",q:"You ___ wear a seat belt in a car. It is the law.",opts:["should","must","shouldn't","don't have"],a:"must",exp:"Must dapat digunakan untuk menyatakan kewajiban kuat atau aturan."},
+  {type:"fill",q:"You look tired. You ___ get some rest. (should / mustn't)",a:["should"],exp:"Should digunakan untuk memberi saran."},
+  {type:"mc",q:"Students ___ do their homework before Friday. The teacher requires it.",opts:["have to","shouldn't","mustn't","doesn't have to"],a:"have to",exp:"Have to menyatakan kewajiban karena aturan atau tuntutan dari luar."},
+  {type:"fill",q:"You ___ run in the corridor. It is dangerous. (mustn't / don't have to)",a:["mustn't"],exp:"Mustn't berarti dilarang. Don't have to berarti tidak wajib, bukan dilarang."},
+  {type:"mc",q:"Which sentence gives advice?",opts:["You must stop at a red light.","You should drink more water.","I have to wear a uniform at school.","We have to arrive on time."],a:"You should drink more water.",exp:"Should digunakan untuk menyarankan sesuatu yang baik dilakukan."},
+  {type:"fill",q:"She ___ wear a uniform at school because it is a school rule. (has to / have to)",a:["has to"],exp:"Untuk he/she/it, gunakan has to."},
+  {type:"mc",q:"Which sentence means that something is not necessary?",opts:["You mustn't bring food.","You don't have to bring food.","You should bring food.","You have to bring food."],a:"You don't have to bring food.",exp:"Don't have to berarti tidak perlu atau tidak wajib."}
+ ]},
+ {id:"mixed",title:"Mixed Grammar Challenge",desc:"Campuran tenses dan struktur kalimat.",classes:[7,8,9],questions:[
+  {type:"mc",q:"Listen! The baby ___.",opts:["cries","is crying","cried","cry"],a:"is crying",exp:"Listen! menunjukkan kegiatan yang sedang berlangsung: present continuous."},
+  {type:"fill",q:"There ___ two books on the table. (is / are)",a:["are"],exp:"Two books berbentuk jamak, sehingga memakai are."},
+  {type:"mc",q:"Choose the correct comparative sentence.",opts:["This bag is more cheap.","This bag is cheaper than that one.","This bag cheaper than that one.","This bag is cheapest than that one."],a:"This bag is cheaper than that one.",exp:"Adjective pendek cheap menjadi cheaper, biasanya diikuti than untuk perbandingan."},
+  {type:"fill",q:"You ___ wear a helmet when riding a motorcycle. (should / should to)",a:["should"],exp:"Modal should diikuti kata kerja dasar tanpa to."},
+  {type:"order",q:"Susun kata menjadi kalimat yang benar.",words:["never","is","late","for school","Dina"],a:"Dina is never late for school",exp:"Adverb never diletakkan setelah be: Dina is never late."}
+ ]}
+];
+let current=null, activeLesson=null, currentQuestions=[], saved=loadResults(), currentAnswers={};
+function loadResults(){try{return JSON.parse(localStorage.getItem("gm_results")||"[]")}catch(e){return []}}
+function persist(){localStorage.setItem("gm_results",JSON.stringify(saved))}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function updateStudents(){const c=document.getElementById("classSelect").value;document.getElementById("studentSelect").innerHTML=students[c].map(n=>`<option>${esc(n)}</option>`).join("")}
+document.getElementById("classSelect").addEventListener("change",updateStudents);updateStudents();
+function show(id){["loginView","studentView","adminView"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id))}
+function studentLogin(){const c=+document.getElementById("classSelect").value,n=document.getElementById("studentSelect").value;current={name:n,cls:c};document.getElementById("studentWelcome").textContent="Halo, "+n+"!";document.getElementById("studentSub").textContent="Kelas "+["","VII","VIII","IX"][c]+" • Semangat berlatih hari ini.";document.getElementById("classPill").textContent="Kelas "+["","VII","VIII","IX"][c];document.getElementById("quizPanel").classList.add("hidden");document.getElementById("resultPanel").classList.add("hidden");show("studentView");renderLessons();renderMyStats()}
+function teacherLogin(){if(document.getElementById("teacherPin").value!=="MATSARO26"){alert("Kode demo belum tepat. Coba MATSARO26.");return}current=null;show("adminView");renderAdmin();renderRoster()}
+function logout(){current=null;activeLesson=null;show("loginView");document.getElementById("teacherPin").value=""}
+function renderLessons(){const c=current.cls;const available=lessons.filter(l=>l.classes.includes(c));document.getElementById("lessonCards").innerHTML=available.map(l=>`<div class="stat"><span class="pill">${l.questions.length} soal</span><h3>${esc(l.title)}</h3><p class="small muted">${esc(l.desc)}</p><button class="teal" onclick="startQuiz('${l.id}')">Mulai latihan</button></div>`).join("")}
+function renderMyStats(){const mine=saved.filter(r=>r.name===current.name&&r.cls===current.cls);document.getElementById("myAttempts").textContent=mine.length;document.getElementById("myBest").textContent=mine.length?Math.max(...mine.map(r=>r.score)):"—";document.getElementById("myLevel").textContent=mine.length&&Math.max(...mine.map(r=>r.score))>=80?"Grammar Achiever":"Grammar Explorer"}
+function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+function startQuiz(id){activeLesson=lessons.find(l=>l.id===id);currentQuestions=activeLesson.questions.map(q=>({...q,opts:q.opts?shuffle(q.opts):undefined,words:q.words?shuffle(q.words):undefined}));currentAnswers={};document.getElementById("resultPanel").classList.add("hidden");const p=document.getElementById("quizPanel");p.classList.remove("hidden");p.innerHTML=`<div class="row"><div><span class="pill">${activeLesson.questions.length} soal</span><h2>${esc(activeLesson.title)}</h2><p class="muted">${esc(activeLesson.desc)}</p></div><button class="secondary" onclick="closeQuiz()">Kembali</button></div><div class="progress"><div id="quizProgress"></div></div><form id="quizForm" onsubmit="submitQuiz(event)">${currentQuestions.map((q,i)=>questionHTML(q,i)).join("")}<button class="teal" type="submit" style="width:100%;margin-top:8px">Kumpulkan jawaban</button></form>`;p.scrollIntoView({behavior:"smooth",block:"start"})}
+function questionHTML(q,i){let body="";if(q.type==="mc"){body=`<div class="answers">${q.opts.map((o,j)=>`<label class="answer"><input type="radio" name="q${i}" value="${esc(o)}" onchange="answerChanged(${i},this.value)"><span>${String.fromCharCode(65+j)}. ${esc(o)}</span></label>`).join("")}</div>`}else if(q.type==="fill"){body=`<label for="q${i}">Jawaban</label><input id="q${i}" autocomplete="off" placeholder="Ketik jawabanmu" oninput="answerChanged(${i},this.value)">`}else{body=`<p class="small muted">Klik kata sesuai urutan yang kamu inginkan.</p><div class="answers" id="order${i}" style="display:flex;flex-wrap:wrap">${q.words.map(w=>`<button type="button" class="secondary" onclick="addWord(${i},'${esc(w).replace(/'/g,"&#39;")}',this)">${esc(w)}</button>`).join("")}</div><p><strong>Kalimatmu:</strong> <span id="orderAnswer${i}" class="muted">Belum disusun</span></p><button class="secondary small" type="button" onclick="resetOrder(${i})">Ulangi susunan</button>`}return `<div class="question"><div class="qnum">Soal ${i+1} • ${q.type==="mc"?"Pilihan ganda":q.type==="fill"?"Isian singkat":"Susun kata"}</div><h3>${esc(q.q)}</h3>${body}</div>`}
+function answerChanged(i,v){currentAnswers[i]=v;let done=Object.keys(currentAnswers).length;document.getElementById("quizProgress").style.width=(done/currentQuestions.length*100)+"%"}
+function addWord(i,w,btn){if(!currentAnswers[i])currentAnswers[i]=[];currentAnswers[i].push(w);btn.disabled=true;document.getElementById("orderAnswer"+i).textContent=currentAnswers[i].join(" ");answerChanged(i,currentAnswers[i].join(" "))}
+function resetOrder(i){currentAnswers[i]=[];document.querySelectorAll(`#order${i} button`).forEach(b=>b.disabled=false);document.getElementById("orderAnswer"+i).textContent="Belum disusun";answerChanged(i,"")}
+function norm(s){return String(s??"").trim().toLowerCase().replace(/[.!?]+$/,"").replace(/\s+/g," ")}
+function submitQuiz(e){e.preventDefault();let correct=0;const details=currentQuestions.map((q,i)=>{let given=currentAnswers[i]??"";let ok=q.type==="fill"?q.a.some(a=>norm(a)===norm(given)):norm(q.a)===norm(given);if(ok)correct++;return {question:q.q,given:Array.isArray(given)?given.join(" "):given,correct:q.type==="fill"?q.a[0]:q.a,ok,explanation:q.exp}});const score=Math.round(correct/currentQuestions.length*100);const record={date:new Date().toLocaleString("id-ID"),timestamp:Date.now(),name:current.name,cls:current.cls,lesson:activeLesson.title,lessonId:activeLesson.id,score,correct,total:currentQuestions.length,details};saved.push(record);persist();document.getElementById("quizPanel").classList.add("hidden");const rp=document.getElementById("resultPanel");rp.classList.remove("hidden");rp.innerHTML=`<div style="text-align:center;padding:12px"><span class="pill">Latihan selesai</span><div class="score">${score}</div><h2>${score>=80?"Hebat, kerja bagus!":score>=60?"Bagus, terus berlatih!":"Jangan menyerah, coba lagi!"}</h2><p class="muted">${correct} dari ${currentQuestions.length} jawaban benar • ${esc(activeLesson.title)}</p><p class="small muted">Hasil ini hanya untuk sesi siswa yang sedang aktif pada prototipe.</p><button class="teal" onclick="renderLessons();document.getElementById('resultPanel').classList.add('hidden')">Pilih latihan lain</button></div><h3>Umpan balik latihan</h3>${details.map((d,i)=>`<div class="question"><div class="row"><strong>Soal ${i+1}</strong><span class="pill" style="${d.ok?'':'background:#fff0e9;color:#98421f'}">${d.ok?"Benar":"Perlu latihan"}</span></div><p>${esc(d.question)}</p><p class="small">Jawabanmu: <strong>${esc(d.given||"— belum diisi —")}</strong></p>${d.ok?"":`<p class="small">Jawaban yang benar: <strong>${esc(d.correct)}</strong></p>`}<p class="small muted">${esc(d.explanation)}</p></div>`).join("")}`;renderMyStats();rp.scrollIntoView({behavior:"smooth",block:"start"})}
+function closeQuiz(){document.getElementById("quizPanel").classList.add("hidden")}
+function renderAdmin(){const filter=document.getElementById("filterClass").value;const rows=saved.filter(r=>filter==="all"||String(r.cls)===filter).slice().reverse();document.getElementById("totalAttempts").textContent=saved.length;document.getElementById("averageScore").textContent=saved.length?Math.round(saved.reduce((a,r)=>a+r.score,0)/saved.length):"—";document.getElementById("resultsBody").innerHTML=rows.map((r,i)=>`<tr><td>${esc(r.date)}</td><td>${esc(r.name)}</td><td>${["","VII","VIII","IX"][r.cls]}</td><td>${esc(r.lesson)}</td><td><strong>${r.score}</strong></td><td><button class="secondary" onclick="showDetail(${saved.indexOf(r)})">Lihat</button></td></tr>`).join("");document.getElementById("adminEmpty").classList.toggle("hidden",rows.length>0)}
+function showDetail(i){const r=saved[i];alert(`${r.name} • Kelas ${["","VII","VIII","IX"][r.cls]}\n${r.lesson}\nSkor: ${r.score}\n\n`+r.details.map((d,j)=>`${j+1}. ${d.question}\nJawaban siswa: ${d.given||"Kosong"}\nKunci: ${d.correct}\n${d.ok?"Benar":"Salah"}\n`).join("\n"))}
+function renderRoster(){document.getElementById("roster").innerHTML=Object.entries(students).map(([c,names])=>`<h4>Kelas ${["","VII","VIII","IX"][c]} • ${names.length} siswa</h4><div class="student-list">${names.map(n=>`<div class="student-chip">${esc(n)}</div>`).join("")}</div>`).join("")}
+function exportCSV(){if(!saved.length){alert("Belum ada hasil untuk diekspor.");return}const rows=[["Tanggal","Nama","Kelas","Latihan","Skor","Benar","Total"],...saved.map(r=>[r.date,r.name,["","VII","VIII","IX"][r.cls],r.lesson,r.score,r.correct,r.total])];const csv=rows.map(row=>row.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(",")).join("\r\n");const blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8;"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="hasil-grammar-matsaro.csv";a.click();URL.revokeObjectURL(a.href)}
+function clearResults(){if(confirm("Yakin ingin menghapus semua hasil latihan demo dari browser ini?")){saved=[];persist();renderAdmin()}}
+</script>
+</body></html>
